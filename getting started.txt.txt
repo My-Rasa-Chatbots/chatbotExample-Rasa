@@ -1,0 +1,18 @@
+Setps to follow:
+1. Create Folder: mChat
+2. Check for python 3.9.12: >python --version
+3. If not found install python 3.9.12
+3. Create virtual environment with command: >python -m venv ./venv
+4. Activate virtual environment: >.\venv\Scripts\activate
+5. Update pip to latest version: >python -m pip install --upgrade pip
+6. Install Rasa 3.1.0: >pip install rasa==3.1.0
+7. Initialize Rasa Project: >rasa init
+
+8. To train Rasa Model: >rasa train
+9. To run Rasa in CLI: >rasa shell
+10. To run Rasa Action Server: >rasa run actions
+
+11. To run Rasa Interactive CLI: >rasa interactive
+12. To run Rasa for channel/rest: >rasa run --enable-api --cors "*"
+
+

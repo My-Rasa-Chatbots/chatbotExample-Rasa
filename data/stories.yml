@@ -1,20 +1,19 @@
 version: "3.1"
 
 stories:
-
 - story: happy path
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_utter_greet
   - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_utter_greet
   - intent: mood_unhappy
-  - action: utter_cheer_up
+  - action: action_utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
@@ -22,9 +21,390 @@ stories:
 - story: sad path 2
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_utter_greet
   - intent: mood_unhappy
-  - action: utter_cheer_up
+  - action: action_utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+
+
+- story: Marlabs Developing Industry Leading product
+  steps:
+  - intent: How_Industry_Leading
+  - action: action_utter_How_Industry_Leading
+
+- story: Marlabs expert in Industry-leading RPA products and platforms
+  steps:
+  - intent: How_Marlabs_Expert
+  - action: action_utter_How_Marlabs_Expert
+
+- story: Marlabs Recognition
+  steps:
+  - intent: Marlabs_Recognition
+  - action: action_utter_Marlabs_Recognition
+
+- story: Industry leading products from Marlabs
+  steps:
+  - intent: Marlabs_Best_Products
+  - action: action_utter_Marlabs_Best_Products
+
+- story: Areas where Marlabs provides solutions
+  steps:
+  - intent: Marlabs_Solution_Area
+  - action: action_utter_Marlabs_Solution_Area
+
+
+##################### Chetan ######################
+- story: Computer Vision Definition
+  steps:
+  - intent: CV_Definition
+  - action: action_utter_CV_Definition
+
+- story: Computer Vision Usage
+  steps:
+  - intent: CV_Usage
+  - action: action_utter_CV_Usage
+
+- story: Computer Vision Workings
+  steps:
+  - intent: CV_Workings
+  - action: action_utter_CV_Workings
+
+- story: NLP Stands For
+  steps:
+  - intent: NLP_Stands
+  - action: action_utter_NLP_Stands
+
+- story: NLP Definition 
+  steps:
+  - intent: NLP_Definition
+  - action: action_utter_NLP_Definition
+
+- story: NLP IN RPA
+  steps:
+  - intent: NLP_RPA
+  - action: action_utter_NLP_RPA
+
+- story: NLP Application 1
+  steps:
+  - intent: NLP_Apllication
+  - action: action_utter_NLP_Apllication
+
+- story: NLP Structure
+  steps:
+  - intent: NLP_Documents_Structure
+  - action: action_utter_NLP_Documents_Structure
+
+- story: NLP Unstructured
+  steps:
+  - intent: NLP_Documents_Unstructured
+  - action: action_utter_NLP_Documents_Unstructured
+
+- story: Fuzzy Logic Definition
+  steps:
+  - intent: FL_Definition
+  - action: action_utter_FL_Definition
+
+- story: Fuzzy Logic in AI
+  steps:
+  - intent: FL_AI
+  - action: action_utter_FL_AI
+
+- story: Digital Assistant Definition
+  steps:
+  - intent: DA_Definition
+  - action: action_utter_DA_Definition
+
+- story: Digital Assistant In RPA
+  steps:
+  - intent: DA_RPA
+  - action: action_utter_DA_RPA
+
+- story: Digital Assistant Examples
+  steps:
+  - intent: DA_Examples
+  - action: action_utter_DA_Examples
+
+- story: Chatbot Definition
+  steps:
+  - intent: Chatbot_Definition
+  - action: action_utter_Chatbot_Definition
+
+- story: Chatbot In RPA
+  steps:
+  - intent: Chatbot_RPA
+  - action: action_utter_Chatbot_RPA
+
+- story: Chatbot Advantages 
+  steps:
+  - intent: Chatbot_Benefits
+  - action: action_utter_Chatbot_Benefits
+
+
+#Procss Discovery and Mining
+
+- story: Process Discovery Definition 
+  steps:
+  - intent: PD_Definition
+  - action: action_utter_PD_Definition
+
+- story: Process Discovery Working
+  steps:
+  - intent: PD_Working
+  - action: action_utter_PD_Working
+
+- story: Process Discovery Benefits
+  steps:
+  - intent: PD_Benefits
+  - action: action_utter_PD_Benefits
+
+- story: Process Mining Definition
+  steps:
+  - intent: PM_Definition
+  - action: action_utter_PM_Definition
+
+- story: Process Mining Usage 
+  steps:
+  - intent: PM_Usage
+  - action: action_utter_PM_Usage
+
+- story: Process Mining Benefits
+  steps:
+  - intent: PM_Benefits
+  - action: action_utter_PM_Benefits
+
+########### Kannan #########################
+# AI
+- story: service path
+  steps:
+  - intent: AI_bot_service
+  - action: action_utter_AI_bot_service
+
+- story: Baas path
+  steps:
+  - intent: AI_Baas
+  - action: action_utter_AI_Baas
+
+- story: Raas path
+  steps:
+  - intent: AI_Raas
+  - action: action_utter_AI_Raas
+
+- story: RAP path
+  steps:
+  - intent: AI_RPA_bot
+  - action: action_utter_AI_RPA_bot
+
+- story: RPAaas path
+  steps:
+  - intent: AI_RPAaas
+  - action: action_utter_AI_RPAaas
+
+- story: IA path
+  steps:
+  - intent: AI_IA
+  - action: action_utter_AI_IA
+
+- story: IA full path
+  steps:
+  - intent: AI_IA_Full
+  - action: action_utter_AI_IA_Full
+
+- story: AI path
+  steps:
+  - intent: AI_AI
+  - action: action_utter_AI_AI
+
+- story: AI Explain path
+  steps:
+  - intent: AI_AboutAI
+  - action: action_utter_AI_AboutAI
+
+- story: AI Automation path
+  steps:
+  - intent: AI_AI_Automation
+  - action: action_utter_AI_AI_Automation
+
+- story: AIaas path
+  steps:
+  - intent: AI_AIaas
+  - action: action_utter_AI_AIaas
+
+- story: Advantages path
+  steps:
+  - intent: AI_Advantages
+  - action: action_utter_AI_Advantages
+
+- story: DisAdvantages path
+  steps:
+  - intent: AI_DisAdvantages
+  - action: action_utter_AI_DisAdvantages
+
+- story: Technology path
+  steps:
+  - intent: AI_Technology
+  - action: action_utter_AI_Technology
+
+- story: Details path
+  steps:
+  - intent: AI_Details
+  - action: action_utter_AI_Details
+
+- story: Intent path
+  steps:
+  - intent: AI_Intent
+  - action: action_utter_AI_Intent
+
+- story: Benefits path
+  steps:
+  - intent: AI_Benefits
+  - action: action_utter_AI_Benefits
+
+# API
+
+- story: Define path
+  steps:
+  - intent: API
+  - action: action_utter_API
+
+- story: Full path
+  steps:
+  - intent: API_Full
+  - action: action_utter_API_Full
+
+- story: Enable path
+  steps:
+  - intent: API_Enable
+  - action: action_utter_API_Enable
+
+- story: Driven path
+  steps:
+  - intent: API_Driven
+  - action: action_utter_API_Driven
+
+- story: Working path
+  steps:
+  - intent: API_Working
+  - action: action_utter_API_Working
+
+- story: EndPoint path
+  steps:
+  - intent: API_EndPoint
+  - action: action_utter_API_EndPoint
+
+- story: Importance path
+  steps:
+  - intent: API_EP_Importance
+  - action: action_utter_API_EP_Importance
+
+- story: Benefits path
+  steps:
+  - intent: API_Benefits
+  - action: action_utter_API_Benefits
+
+- story: Reasons path
+  steps:
+  - intent: API_Main_reasons
+  - action: action_utter_API_Main_reasons
+
+- story: Security path
+  steps:
+  - intent: API_Security
+  - action: action_utter_API_Security
+
+- story: Performance path
+  steps:
+  - intent: API_Performance
+  - action: action_utter_API_Performance
+
+#################### Nagendra ########################
+# Process Analytics
+- story: Process Analysis Definiton
+  steps:
+  - intent: PA_Definition
+  - action: action_utter_PA_Definition
+
+- story: PA Goals
+  steps:
+  - intent: PA_Benefits
+  - action: action_utter_PA_Benefits
+
+- story: ML Purpose in PA
+  steps:
+  - intent: ML_Purpose_In_PA
+  - action: action_utter_ML_Purpose_In_PA
+
+- story: How ML used in analytics
+  steps:
+  - intent: How_ML_Used_In_PA
+  - action: action_utter_How_ML_Used_In_PA
+
+- story: ML Definition
+  steps:
+  - intent: ML_Definition
+  - action: action_utter_ML_Definition
+
+- story: PA Types
+  steps:
+  - intent: PA_Types
+  - action: action_utter_PA_Types
+
+- story: Descriptive PA Definition
+  steps:
+  - intent: Descriptive_PA_Definition
+  - action: action_utter_Descriptive_PA_Definition
+
+- story: Predictive  PA Definition
+  steps:
+  - intent: Predictive_PA_Definition
+  - action: action_utter_Predictive_PA_Definition
+
+- story: Presciptive PA Definition
+  steps:
+  - intent: Prescriptive_PA_Definition
+  - action: action_utter_Prescriptive_PA_Definition
+
+- story: PA Used Areas
+  steps:
+  - intent: PA_Used_Areas
+  - action: action_utter_PA_Used_Areas
+
+#Process Re-Engineering
+
+- story: PRE Definition
+  steps:
+  - intent: PRE_Definition
+  - action: action_utter_PRE_Definition
+
+- story: PRE Steps
+  steps:
+  - intent: PRE_Stages
+  - action: action_utter_PRE_Stages
+
+- story: PRE Benefits
+  steps:
+  - intent: PRE_Benefits
+  - action: action_utter_PRE_Benefits
+
+- story: PRE Disadvantages
+  steps:
+  - intent: PRE_Disadvantages
+  - action: action_utter_PRE_Disadvantages
+
+- story: PRE Challenges
+  steps:
+  - intent: PRE_Challenges
+  - action: action_utter_PRE_Challenges
+
+- story: RPA Definition
+  steps:
+  - intent: RPA_Definition
+  - action: action_utter_RPA_Definition
+
+- story: RPA Used Areas
+  steps:
+  - intent: RPA_Using_Areas
+  - action: action_utter_RPA_Using_Areas
+

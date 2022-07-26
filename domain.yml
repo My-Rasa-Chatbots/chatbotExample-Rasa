@@ -8,14 +8,258 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - nlu_fallback
+
+  - How_Industry_Leading
+  - How_Marlabs_Expert
+  - Marlabs_Recognition
+  - Marlabs_Best_Products
+  - Marlabs_Solution_Area
+  - Advantage
+
+  - Connect_With_Agent
+
+# chetan
+  - CV_Definition
+  - CV_Usage
+  - CV_Workings
+
+  - NLP_Stands
+  - NLP_Definition
+  - NLP_RPA
+  - NLP_Apllication
+  - NLP_Documents_Structure
+  - NLP_Documents_Unstructured
+
+  - FL_Definition
+  - FL_AI
+
+  - DA_Definition
+  - DA_RPA
+  - DA_Examples
+
+  - Chatbot_Definition
+  - Chatbot_RPA
+  - Chatbot_Benefits
+
+  
+  - PD_Definition
+  - PD_Working
+  - PD_Benefits
+
+  - PM_Definition
+  - PM_Usage
+  - PM_Benefits
+
+# Kannan
+  - AI_bot_service
+  - AI_Baas
+  - AI_Raas
+  - AI_RPA_bot
+  - AI_RPAaas
+  - AI_IA
+  - AI_IA_Full
+  - AI_AI
+  - AI_AboutAI
+  - AI_AI_Automation
+  - AI_AIaas
+  - AI_Advantages
+  - AI_DisAdvantages
+  - AI_Technology
+  - AI_Details
+  - AI_Intent
+  - AI_Benefits
+
+  - API
+  - API_Full
+  - API_Enable
+  - API_Driven
+  - API_Working
+  - API_EndPoint
+  - API_EP_Importance
+  - API_Benefits
+  - API_Main_reasons
+  - API_Security
+  - API_Performance
+
+# Nagndra
+#Process Analysis
+  - PA_Definition
+  - PA_Benefits
+  - ML_Purpose_In_PA
+  - How_ML_Used_In_PA
+  - ML_Definition
+  - DPA_Definition
+  - PA_Types
+  - Descriptive_PA_Definition
+  - Predictive_PA_Definition 
+  - Prescriptive_PA_Definition
+  - PA_Used_Areas
+
+  #Process Re Engineering
+  - PRE_Definition
+  - RPA_Definition
+  - PRE_Stages
+  - PRE_Benefits
+  - PRE_Disadvantages
+  - PRE_Challenges
+  - RPA_Using_Areas
+
+
+
+
+entities:
+  - phone_number
+  - email_id
+
+slots:
+  user_query:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: contact_form
+        requested_slot: user_query
+
+  user_name:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: contact_form
+        requested_slot: user_name
+  
+  user_phone:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: phone_number
+      intent: Connect_With_Agent
+    - type: from_text
+      conditions:
+      - active_loop: contact_form
+        requested_slot: user_phone
+  
+  user_email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email_id
+    - type: from_text
+      conditions:
+      - active_loop: contact_form
+        requested_slot: user_email
+
+forms:
+  contact_form:
+    required_slots:
+      - user_name
+      - user_phone
+      - user_email
+      - user_query
+
+actions:
+- action_utter_greet
+- action_utter_cheer_up
+
+- validate_contact_form
+- submit_contact_form
+
+- action_utter_How_Industry_Leading
+- action_utter_How_Marlabs_Expert
+- action_utter_Marlabs_Recognition
+- action_utter_Marlabs_Best_Products
+- action_utter_Marlabs_Solution_Area
+
+# chetan ############################
+- action_utter_CV_Definition
+- action_utter_CV_Usage
+- action_utter_CV_Workings
+- action_utter_NLP_Stands
+- action_utter_NLP_Definition
+- action_utter_NLP_RPA
+- action_utter_NLP_Apllication
+- action_utter_NLP_Documents_Structure
+- action_utter_NLP_Documents_Unstructured
+- action_utter_FL_Definition
+- action_utter_FL_AI
+- action_utter_DA_Definition
+- action_utter_DA_RPA
+- action_utter_DA_Examples
+- action_utter_Chatbot_Definition
+- action_utter_Chatbot_RPA
+- action_utter_Chatbot_Benefits
+
+- action_utter_PD_Definition
+- action_utter_PD_Working
+- action_utter_PD_Benefits
+- action_utter_PM_Definition
+- action_utter_PM_Usage
+- action_utter_PM_Benefits
+
+################# Kannan ############
+#AI 
+- action_utter_AI_bot_service
+- action_utter_AI_Baas
+- action_utter_AI_Raas
+- action_utter_AI_RPA_bot
+- action_utter_AI_RPAaas
+- action_utter_AI_IA
+- action_utter_AI_IA_Full
+- action_utter_AI_AI
+- action_utter_AI_AboutAI
+- action_utter_AI_AI_Automation
+- action_utter_AI_AIaas
+- action_utter_AI_Advantages
+- action_utter_AI_DisAdvantages
+- action_utter_AI_Technology
+- action_utter_AI_Details
+- action_utter_AI_Intent
+- action_utter_AI_Benefits
+
+#API
+- action_utter_API
+- action_utter_API_Full
+- action_utter_API_Enable
+- action_utter_API_Driven
+- action_utter_API_Working
+- action_utter_API_EndPoint
+- action_utter_API_EP_Importance
+- action_utter_API_Benefits
+- action_utter_API_Main_reasons
+- action_utter_API_Security
+- action_utter_API_Performance
+
+####### Nagendra #################
+# Process Analysis
+
+- action_utter_PA_Definition
+- action_utter_PA_Benefits
+- action_utter_ML_Definition
+- action_utter_ML_Purpose_In_PA
+- action_utter_How_ML_Used_In_PA
+- action_utter_PA_Types
+- action_utter_Descriptive_PA_Definition
+- action_utter_Predictive_PA_Definition
+- action_utter_Prescriptive_PA_Definition
+- action_utter_PA_Used_Areas
+
+# Process Re Engineering
+
+- action_utter_PRE_Definition
+- action_utter_PRE_Stages
+- action_utter_PRE_Benefits
+- action_utter_PRE_Disadvantages
+- action_utter_PRE_Challenges
+- action_utter_RPA_Definition
+- action_utter_RPA_Using_Areas
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+ 
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -27,7 +271,25 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, powered by Rasa and Developed by Marlabs."
+
+  utter_fill_form_all_details:
+  - text: "Please enter following details:"
+
+  utter_ask_user_name:
+  - text: "Can i know your name please?"
+  
+  utter_ask_user_phone:
+  - text: "Can i know your phone number please?"
+  
+  utter_ask_user_email:
+  - text: "Can i know your email id please?"
+  
+  utter_ask_user_query:
+  - text: "Can i know what is your query?"
+  
+  utter_we_will_contact_you:
+  - text: "Thank you for providing details, we will contact you shortly."
 
 session_config:
   session_expiration_time: 60

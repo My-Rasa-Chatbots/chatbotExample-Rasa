@@ -1,6 +1,10 @@
 version: "3.1"
 
 rules:
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -11,3 +15,20 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate contact form
+  steps:
+  - intent: Connect_With_Agent
+  - action: utter_fill_form_all_details
+  - action: contact_form
+  - active_loop: contact_form
+
+- rule: Submit contact form
+  condition:
+  - active_loop: contact_form
+  steps:
+  - action: contact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: submit_contact_form

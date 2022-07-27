@@ -15,6 +15,8 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk.events import EventType, AllSlotsReset
 import re
 
+from sqlalchemy import null
+
 # MongoDB connection
 
 
@@ -26,11 +28,23 @@ def connectDB():
         col_name = "responses_test"
         my_db = client[db_name]
         my_coll = my_db[col_name]
-        # print("DB Connected successfully")
+        # print("DB Connected successfully:")
         return my_coll
     except pymongo.errors.ConnectionFailure as e:
-        print("Database connection problem: ", e)
+        print("Database connection problem: ", str(e))
+#################################################
+####  query DB and send response
+def getResponse(response_name):
+    my_coll = connectDB()
+    try:
+        res = my_coll.find_one({"response_name": response_name})
 
+        response = res["response_payload"]
+        
+        return response
+    except pymongo.errors.OperationFailure as e:
+        print("MongoDB Operational Failure: ",e.details)
+        return []
 ################################################
 # general chitchat topics
 
@@ -44,13 +58,10 @@ class ActionUtterGreet(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_greet"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
-
+        response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
         return []
+        
 
 
 class ActionUtterCheerUp(Action):
@@ -62,10 +73,7 @@ class ActionUtterCheerUp(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_cheer_up"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
-
+        response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
         return []
 ##############################################
@@ -152,9 +160,7 @@ class ActionHowMarlabsRecognition(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         resp_name = "action_utter_Marlabs_Recognition"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
         return []
@@ -168,9 +174,7 @@ class ActionHowMarlabsExpert(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         resp_name = "action_utter_How_Marlabs_Expert"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
         return []
@@ -184,9 +188,7 @@ class ActionHowMarlabsBestProducts(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         resp_name = "action_utter_Marlabs_Best_Products"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
         return []
@@ -200,9 +202,7 @@ class ActionHowMarlabsSolutionArea(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         resp_name = "action_utter_Marlabs_Solution_Area"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
         return []
@@ -216,9 +216,7 @@ class ActionHowMarlabsIndustryLeading(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         resp_name = "action_utter_How_Industry_Leading"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
         return []
@@ -239,11 +237,7 @@ class ActionUtterCvDefinition(Action):
 
         resp_name = "action_utter_CV_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -261,11 +255,7 @@ class ActionUtterCvUsage(Action):
 
         resp_name = "action_utter_CV_Usage"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -283,11 +273,7 @@ class ActionUtterCvWorkings(Action):
 
         resp_name = "action_utter_CV_Workings"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -307,11 +293,7 @@ class ActiontterNlpStands(Action):
 
         resp_name = "action_utter_NLP_Stands"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -329,11 +311,7 @@ class ActionUtterNlpDefinition(Action):
 
         resp_name = "action_utter_NLP_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -351,11 +329,7 @@ class ActionUtterNlpRpa(Action):
 
         resp_name = "action_utter_NLP_RPA"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -373,11 +347,7 @@ class ActionUtterNlpApllication(Action):
 
         resp_name = "action_utter_NLP_Apllication"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -395,11 +365,7 @@ class ActionUtterNlpDocumentsStructure(Action):
 
         resp_name = "action_utter_NLP_Documents_Structure"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -417,11 +383,7 @@ class ActionUtterNlpDocumentsUnstructured(Action):
 
         resp_name = "action_utter_NLP_Documents_Unstructured"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -441,11 +403,7 @@ class ActionUtterFlDefinition(Action):
 
         resp_name = "action_utter_FL_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -463,11 +421,7 @@ class ActionUtterFlAi(Action):
 
         resp_name = "action_utter_FL_AI"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -487,11 +441,7 @@ class ActionUtterDaDefinition(Action):
 
         resp_name = "action_utter_DA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -509,11 +459,7 @@ class ActionUtterDaRpa(Action):
 
         resp_name = "action_utter_DA_RPA"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -531,11 +477,7 @@ class ActionUtterDaExamples(Action):
 
         resp_name = "action_utter_DA_Examples"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -555,11 +497,7 @@ class ActionUtterChatbotDefinition(Action):
 
         resp_name = "action_utter_Chatbot_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -577,11 +515,7 @@ class ActionUtterChatbotRpa(Action):
 
         resp_name = "action_utter_Chatbot_RPA"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -599,11 +533,7 @@ class ActionUtterChatbotBenefits(Action):
 
         resp_name = "action_utter_Chatbot_Benefits"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -623,11 +553,7 @@ class ActionUtterPdDefinition(Action):
 
         resp_name = "action_utter_PD_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -645,11 +571,7 @@ class ActionUtterPdWorking(Action):
 
         resp_name = "action_utter_PD_Working"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -667,11 +589,7 @@ class ActionUtterPdBenefits(Action):
 
         resp_name = "action_utter_PD_Benefits"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -691,11 +609,7 @@ class ActionUtterPmDefinition(Action):
 
         resp_name = "action_utter_PM_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -713,11 +627,7 @@ class ActionUtterPmUsage(Action):
 
         resp_name = "action_utter_PM_Usage"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -735,11 +645,7 @@ class ActionUtterPmBenefits(Action):
 
         resp_name = "action_utter_PM_Benefits"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -762,9 +668,7 @@ class ActionutterAIbotservice(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_bot_service"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -783,9 +687,7 @@ class ActionutterAIBaas(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Baas"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -804,9 +706,7 @@ class ActionutterAIRaas(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Raas"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -825,9 +725,7 @@ class ActionutterAIRPAbot(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_RPA_bot"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -846,9 +744,7 @@ class ActionutterAIRPAaas(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_RPAaas"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -867,9 +763,7 @@ class ActionutterAIIA(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_IA"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -888,9 +782,7 @@ class ActionutterAIIAFull(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_IA_Full"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -909,9 +801,7 @@ class ActionutterAIAI(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_AI"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -930,9 +820,7 @@ class ActionutterAIAboutAI(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_AboutAI"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -951,9 +839,7 @@ class ActionutterAIAIAutomation(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_AI_Automation"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -972,9 +858,7 @@ class ActionutterAIAIaas(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_AIaas"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -993,9 +877,7 @@ class ActionutterAIAdvantages(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Advantages"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1014,9 +896,7 @@ class ActionutterAIDisAdvantages(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_DisAdvantages"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1035,9 +915,7 @@ class ActionutterAITechnology(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Technology"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1056,9 +934,7 @@ class ActionutterAIDetails(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Details"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1077,9 +953,7 @@ class ActionutterAIIntent(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Intent"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1098,9 +972,7 @@ class ActionutterAIBenefits(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_AI_Benefits"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1121,9 +993,7 @@ class ActionutterAPI(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1142,9 +1012,7 @@ class ActionutterAPIFull(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Full"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1163,9 +1031,7 @@ class ActionutterAPIEnable(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Enable"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1184,9 +1050,7 @@ class ActionutterAPIDriven(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Driven"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1205,9 +1069,7 @@ class ActionutterAPIWorking(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Working"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1226,9 +1088,7 @@ class ActionutterAPIEndPoint(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_EndPoint"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1247,9 +1107,7 @@ class ActionutterAPIEPImportance(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_EP_Importance"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1268,9 +1126,7 @@ class ActionutterAPIBenefits(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Benefits"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1289,9 +1145,7 @@ class ActionutterAPIMainreasons(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Main_reasons"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1310,9 +1164,7 @@ class ActionutterAPISecurity(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Security"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1331,9 +1183,7 @@ class ActionutterAPIPerformance(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         resp_name = "action_utter_API_Performance"
-        my_coll = connectDB()
-        res = my_coll.find_one({"response_name": resp_name})
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1354,11 +1204,7 @@ class ActionUtterPaDefination(Action):
 
         resp_name = "action_utter_PA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1376,11 +1222,7 @@ class ActionUtterPaBenefits(Action):
 
         resp_name = "action_utter_PA_Benefits"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1398,11 +1240,7 @@ class ActionUtterMlPurposeInPa(Action):
 
         resp_name = "action_utter_ML_Purpose_In_PA"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1420,11 +1258,7 @@ class ActionUtterHowMlUsedInPa(Action):
 
         resp_name = "action_utter_How_ML_Used_In_PA"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1442,11 +1276,7 @@ class ActionUtterMlDefinition(Action):
 
         resp_name = "action_utter_ML_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1464,11 +1294,7 @@ class ActionUtterPaTypes(Action):
 
         resp_name = "action_utter_PA_Types"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1486,11 +1312,7 @@ class ActionUtterDescriptivePaDefinition(Action):
 
         resp_name = "action_utter_Descriptive_PA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1508,11 +1330,7 @@ class ActionUtterPredictivePaDefinition(Action):
 
         resp_name = "action_utter_Predictive_PA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1530,11 +1348,7 @@ class ActionUtterPresciptivePaDefinition(Action):
 
         resp_name = "action_utter_Prescriptive_PA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1552,11 +1366,7 @@ class ActionUtterPaUsedAreas(Action):
 
         resp_name = "action_utter_PA_Used_Areas"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1576,11 +1386,7 @@ class ActionUtterProcessReEngineeringDefinition(Action):
 
         resp_name = "action_utter_PRE_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1598,11 +1404,7 @@ class ActionUtterProcessReEngineerngSteps(Action):
 
         resp_name = "action_utter_PRE_Stages"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1620,11 +1422,7 @@ class ActionUtterProcessReEngineerngBenefits(Action):
 
         resp_name = "action_utter_PRE_Benefits"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1642,11 +1440,7 @@ class ActionUtterProcessReEngineerngDisadvantages(Action):
 
         resp_name = "action_utter_PRE_Disadvantages"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1664,11 +1458,7 @@ class ActionUtterProcessReEngineerngChallenges(Action):
 
         resp_name = "action_utter_PRE_Challenges"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1686,11 +1476,7 @@ class ActionUtterRPADefinition(Action):
 
         resp_name = "action_utter_RPA_Definition"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 
@@ -1708,11 +1494,7 @@ class ActionUtterRPAUsedAreas(Action):
 
         resp_name = "action_utter_RPA_Using_Areas"
 
-        my_coll = connectDB()
-
-        res = my_coll.find_one({"response_name": resp_name})
-
-        response = res["response_payload"]
+        response=getResponse(resp_name)
 
         dispatcher.utter_message(json_message=response)
 

@@ -7,13 +7,15 @@ Setps to follow:
 5. Update pip to latest version: >python -m pip install --upgrade pip
 6. Install Rasa 3.1.0: >pip install rasa==3.1.0
 7. Additional dependencies for database connection:
-    pymongo> pip install pymongo
+    + pymongo> pip install pymongo
 
 8. To train Rasa Model: >rasa train
-9. To run Rasa in CLI: >rasa shell
-10. To run Rasa Action Server: >rasa run actions
 
-11. To run Rasa Interactive CLI: >rasa interactive
-12. To run Rasa for channel/rest: >rasa run --enable-api --cors "*"
+9. To run Rasa Action Server: >rasa run actions 
+10. To run Rasa for channel/rest: >rasa run --enable-api --cors "*"
+
+####  Optional for debuging and testng purpose only ###
+* To run Rasa in CLI: >rasa shell
+* To run Rasa Interactive CLI: >rasa interactive
 
 

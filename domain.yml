@@ -10,6 +10,10 @@ intents:
   - bot_challenge
   - nlu_fallback
 
+  - Intelligent_Automation
+  - RPA_Design_Implementation_Topics
+  - Intelligent_Automation_Topics
+
   - How_Industry_Leading
   - How_Marlabs_Expert
   - Marlabs_Recognition
@@ -164,6 +168,10 @@ actions:
 
 - validate_contact_form
 - submit_contact_form
+
+- action_utter_Intelligent_Automation
+- action_utter_RPA_Design_Implementation_Topics
+- action_utter_Intelligent_Automation_Topics
 
 - action_utter_How_Industry_Leading
 - action_utter_How_Marlabs_Expert

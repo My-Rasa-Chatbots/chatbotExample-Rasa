@@ -1,44 +1,6 @@
 version: "3.1"
 
 nlu:
-- intent: How_Industry_Leading
-  examples: |
-    - How is Marlabs developing industry leading products and platforms?
-    - Development of RPA products?
-    - How its developing?
-    - How its developing industry leading products and platforms?
-
-- intent: How_Marlabs_Expert
-  examples: |
-    - How is Marlabs expertise in Industry leading RPA products and platforms?
-    - How its expert?
-    - Expertise?
-    - Marlabs expertise in RPA?
-    - Expertise in industry leading RPA products?
-
-- intent: Marlabs_Recognition
-  examples: |
-    - What are the recognitions Marlabs got?
-    - Mrlabs recognition?
-    - Recognitions?
-    - Recognitions marlabs got?
-  
-- intent: Marlabs_Best_Products
-  examples: |
-    - What are the industry leading products from Marlabs?
-    - Products from marlabs?
-    - Marlabs best products?
-    - Industry leading Products?
-  
-- intent: Marlabs_Solution_Area
-  examples: |
-    - What are the areas where Marlabs provides solutions?
-    - Waht are areas marlabs involved?
-    - Marlabs service area?
-    - Service areas?
-    - Solution area?
-    - Which areas marlabs provides solution?
-
 - intent: greet
   examples: |
     - hey
@@ -127,6 +89,46 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+###############################################
+
+- intent: How_Industry_Leading
+  examples: |
+    - How is Marlabs developing industry leading products and platforms?
+    - Development of RPA products?
+    - How its developing?
+    - How its developing industry leading products and platforms?
+
+- intent: How_Marlabs_Expert
+  examples: |
+    - How is Marlabs expertise in Industry leading RPA products and platforms?
+    - How its expert?
+    - Expertise?
+    - Marlabs expertise in RPA?
+    - Expertise in industry leading RPA products?
+
+- intent: Marlabs_Recognition
+  examples: |
+    - What are the recognitions Marlabs got?
+    - Mrlabs recognition?
+    - Recognitions?
+    - Recognitions marlabs got?
+  
+- intent: Marlabs_Best_Products
+  examples: |
+    - What are the industry leading products from Marlabs?
+    - Products from marlabs?
+    - Marlabs best products?
+    - Industry leading Products?
+  
+- intent: Marlabs_Solution_Area
+  examples: |
+    - What are the areas where Marlabs provides solutions?
+    - Waht are areas marlabs involved?
+    - Marlabs service area?
+    - Service areas?
+    - Solution area?
+    - Which areas marlabs provides solution?
 
 
 # --------------------------------------------------------

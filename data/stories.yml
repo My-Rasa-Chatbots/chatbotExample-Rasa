@@ -29,6 +29,22 @@ stories:
   - action: utter_goodbye
 
 
+- story: Intelligent Automation Page
+  steps:
+  - intent: Intelligent_Automation
+  - action: action_utter_Intelligent_Automation
+
+- story: RPA Design and Implementation topic
+  steps:
+  - intent: RPA_Design_Implementation_Topics
+  - action: action_utter_RPA_Design_Implementation_Topics
+
+- story: Intelligent Automation topic
+  steps:
+  - intent: Intelligent_Automation_Topics
+  - action: action_utter_Intelligent_Automation_Topics
+
+###########################
 
 - story: Marlabs Developing Industry Leading product
   steps:

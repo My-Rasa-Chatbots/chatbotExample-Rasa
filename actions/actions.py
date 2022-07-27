@@ -45,6 +45,46 @@ def getResponse(response_name):
     except pymongo.errors.OperationFailure as e:
         print("MongoDB Operational Failure: ",e.details)
         return []
+
+#############################
+class IntelligentAutomationPage(Action):
+    def name(self) -> Text:
+        return "action_utter_Intelligent_Automation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        resp_name = "action_utter_Intelligent_Automation"
+        response=getResponse(resp_name)
+        dispatcher.utter_message(json_message=response)
+        return []
+
+class RPADesignAndImplementation(Action):
+    def name(self) -> Text:
+        return "action_utter_RPA_Design_Implementation_Topics"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        resp_name = "action_utter_RPA_Design_Implementation_Topics"
+        response=getResponse(resp_name)
+        dispatcher.utter_message(json_message=response)
+        return []
+
+class IntelligentAutomationTopic(Action):
+    def name(self) -> Text:
+        return "action_utter_Intelligent_Automation_Topics"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        resp_name = "action_utter_Intelligent_Automation_Topics"
+        response=getResponse(resp_name)
+        dispatcher.utter_message(json_message=response)
+        return []
 ################################################
 # general chitchat topics
 

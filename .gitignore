@@ -1,5 +1,4 @@
 .gitignore
 .rasa
-models
 venv
 excel_to_mongo.py

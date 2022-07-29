@@ -210,7 +210,7 @@ nlu:
     - How NLP works in RPA?
     - natural language processing in rpa
 
-- intent: NLP_Apllication
+- intent: NLP_Application
   examples: |
     - What are two Categories NLP applications in RPA?
     - 2 categories of NLP in rpa

@@ -31,7 +31,7 @@ intents:
   - NLP_Stands
   - NLP_Definition
   - NLP_RPA
-  - NLP_Apllication
+  - NLP_Application
   - NLP_Documents_Structure
   - NLP_Documents_Unstructured
 
@@ -186,7 +186,7 @@ actions:
 - action_utter_NLP_Stands
 - action_utter_NLP_Definition
 - action_utter_NLP_RPA
-- action_utter_NLP_Apllication
+- action_utter_NLP_Application
 - action_utter_NLP_Documents_Structure
 - action_utter_NLP_Documents_Unstructured
 - action_utter_FL_Definition

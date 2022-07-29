@@ -39,6 +39,7 @@ def getResponse(response_name):
     my_coll = connectDB()
     try:
         res = my_coll.find_one({"response_name": response_name})
+        
         if(res==None):
             print("Result None for response name: ",response_name)
             return []
@@ -1300,7 +1301,7 @@ class ActionUtterHowMlUsedInPa(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("JI")
+
         resp_name = "action_utter_How_ML_Used_In_PA"
 
         response=getResponse(resp_name)

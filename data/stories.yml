@@ -105,8 +105,8 @@ stories:
 
 - story: NLP Application 1
   steps:
-  - intent: NLP_Apllication
-  - action: action_utter_NLP_Apllication
+  - intent: NLP_Application
+  - action: action_utter_NLP_Application
 
 - story: NLP Structure
   steps:

@@ -131,175 +131,6 @@ nlu:
     - Which areas marlabs provides solution?
 
 
-# --------------------------------------------------------
-
-- intent: CV_Definition
-  examples: |
-    - What is Copmuter Vision
-    - Meaning of Computer Vision
-    - What you mean by computer Vision
-    - Computer Vision
-    - What is CV?
-    - Tell me about Computer Vision
-    - Tell me about CV
-    - I want to know about Computer Vision
-
-- intent: CV_Usage
-  examples: |
-    - Where is computer vision used?
-    - uses of Computer Vision
-    - computer vision used in
-
-# - intent: CV_Workings
-#   examples: |
-#     - How does Computer Vision work?
-#     - Working of Computer Vision 
-#     - Work of Computer Vision
-#     - Computer Vision works on
-
-- intent: NLP_Stands
-  examples: |
-    - NLP stands for?
-    - Natural Language Processing
-    - Fullform NLP
-    - What is NLP Fullform?
-
-- intent: NLP_Definition
-  examples: |
-    - What is NLP
-    - What is mean by NLP
-    - What is NLP
-    - tell me about NLP
-    - about NLP
-
-- intent: NLP_RPA
-  examples: |
-    - What is Natural Language Processing NLP in RPA?
-    - NLP in RPA
-    - How NLP works in RPA?
-    - natural language processing in rpa
-
-- intent: NLP_Apllication
-  examples: |
-    - What are two Categories NLP applications in RPA?
-    - 2 categories of NLP in rpa
-    - NLP application in rpa
-    - Application of NLP in RPA
-
-- intent: NLP_Documents_Structure
-  examples: |
-    - What all documents include by Structured and semi-structured?
-    - documents in structured NLP
-    - documents in semi-structured NLP
-    
-- intent: NLP_Documents_Unstructured
-  examples: |
-    - What all documents include by Unstructured document?
-    - documents in Unstructured document NLP
-
-- intent: FL_Definition
-  examples: |
-    - What is a Fuzzy logic
-    - what you mean by Fuzzy logic
-    - meaning of fuzzy logic
-    - deffination of fuzzy logic
-
-- intent: FL_AI
-  examples: |
-    - What is the role of fuzzy logic in AI?
-    - fuzzy logic in AI
-    - presence of AI in fuzzy logic
-    - How fuzzy logic related to AI
-    - AI in fuzzy logic
-
-- intent: DA_Definition
-  examples: |
-    - What is the Digital Assistant
-    - Digital Assistant
-    - meaning of Digital Assistant
-    - tell me about Digital Assistant
-
-- intent: DA_RPA
-  examples: |
-    - What is the Role of Digital Assistant in RPA?
-    - Digital Assistant in rpa
-    - role of Digital Assistant
-    - how rpa related to the Digital Assistant
-
-- intent: DA_Examples
-  examples: |
-    - What are the examples of Digital Assistant?
-    - examples of Digital Assistant
-    - Digital Assistant examples
-
-- intent: Chatbot_Definition
-  examples: |
-    - What is a Chatbot
-    - definition of Chatbot
-    - what you mean by Chatbot
-    - about Chatbot
-    - define Chatbot
-    - Chatbot definition
-  
-- intent: Chatbot_RPA
-  examples: |
-    - How Chatbot are integrated with the RPA?
-    - role of Chatbot in RPA
-    - Chatbot in rpa
-    - how rpa related to Chatbot
-    
-- intent: Chatbot_Benefits
-  examples: |
-    - What are the Benefits of Chatbot?
-    - Benefits of Chatbot
-    - advantage of Chatbot
-
-# Process Discovery and Mining
-
-- intent: PD_Definition
-  examples: |
-    - What is Process Discovery
-    - Describe Process Discovery.
-    - Process Discovery deffination
-    - about Process Discovery.
-    - define Process Discovery
-
-- intent: PD_Working
-  examples: |
-    - How does Process Discovery Work?
-    - Working of Process Discovery
-    - work of Process Discovery
-
-- intent: PD_Benefits
-  examples: | 
-    - What are the benefits of Process Discovery?
-    - Benefits of Process Discovery
-    - Process Discovery Benefits.
-    - advantage of Process Discovery
-    
-
-- intent: PM_Definition
-  examples: |
-    - What is Process Mining
-    - About Process Mining
-    - Describe Process Mining
-    - Define Process Mining
-    - what is the meaning of Process Mining?
-    - short note on Process Mining
-
-- intent: PM_Usage
-  examples: |
-    - Why use Process Mining
-    - Usage of Process Mining
-    - use of Process Mining
-    - Process Mining Usage
-
-- intent: PM_Benefits
-  examples: |
-    - What are benefits of Process Mining
-    - Benefits of Process Mining
-    - Process Mining benefits
-    - advantage of Process Mining Benefits
 # *********************************************
 - intent: Advantage
   examples: |
@@ -311,10 +142,10 @@ nlu:
 
 - regex: phone_number
   examples: |
-    - ^(\+\d{1,3}[- ]?)?\d{10}$
+    - (\+\d{1,3}[- ]?)?\d{10}
 - regex: email_id
   examples: |
-    - ^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
+    - [a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}
 
 - intent: Connect_With_Agent
   examples: |
@@ -530,9 +361,17 @@ nlu:
     - Raas Stands for?
     - Raas full form
     - Raas  
+    - Raas Stands for?
+    - Raas full form
+    - Raas 
 
 - intent: AI_RPA_bot
   examples: |
+    - What is  RPA Bot as a Service?
+    - RPA Bot as a service?
+    - Define  RPA Bot as a service?
+    - RPA Bot as a service mean's?
+    - RPAaas Definition?
     - What is  RPA Bot as a Service?
     - RPA Bot as a service?
     - Define  RPA Bot as a service?
@@ -544,6 +383,9 @@ nlu:
     - RPAaas Stands for?
     - RPAaas full form?
     - RPAaas  
+    - RPAaas Stands for?
+    - RPAaas full form?
+    - what is RPAaas 
 
 - intent: AI_IA
   examples: |
@@ -559,7 +401,13 @@ nlu:
   examples: |
     - IA stands for?
     - IA full form?
-    - IA ?
+    - What dou you mean by IA ?
+    - IA stands for?
+    - IA full form?
+    - What is IA ?
+    - IA stands for?
+    - IA full form?
+    - IA?
 
 - intent: AI_AI
   examples: |
@@ -567,14 +415,18 @@ nlu:
     - AI stands for?
     - AI full form?
     - AI  ?
+    - What is  AI full form?
+    - AI stands for?
+    - AI full form?
+    - AI  ?
 
 - intent: AI_AboutAI
   examples: |
-    - Explain about  Artificial Intelligence AI
-    - What is  Artificial Intelligence  
+    - Explain about Artificial Intelligence AI
+    - What is Artificial Intelligence  
     - Artificial Intelligence definiation
-    - Define  AI  
-    - Define  Artificial intelligence  
+    - Define AI  
+    - Define Artificial intelligence  
     - Artificial intelligence  
 
 - intent: AI_AI_Automation
@@ -591,6 +443,10 @@ nlu:
     - AIaas full form
     - AIaas stands for?
     - AIaas  
+    - What is  AIaas Full form?
+    - AIaas full form
+    - AIaas stands for?
+    - AIaas
 
 - intent: AI_Advantages
   examples: |
@@ -633,7 +489,7 @@ nlu:
   examples: |
     - What is the  benefits of AI  ?
     - Benefits of AI  ?
-    - Benefits  ?
+    - Benefits  of AI?
     - Explain  benefits of AI  ?
     - what are the  benefits of AI  ?
     - Share the  benefits of AI  ?
@@ -650,6 +506,10 @@ nlu:
 
 - intent: API_Full
   examples: |
+    - What is full form of  API  ?
+    - API full form?
+    - API  
+    - API stands for?
     - What is full form of  API  ?
     - API full form?
     - API  
@@ -783,6 +643,10 @@ nlu:
 
 - intent: How_ML_Used_In_PA
   examples: |
+    - How is ML used in analytics?
+    - How Machine Learning used in process analysis
+    - How is Machine Learning used in analytics?
+    - How Machine Learning used in process analysis
     - How is Machine Learning used in analytics?
     - How Machine Learning used in process analysis
 

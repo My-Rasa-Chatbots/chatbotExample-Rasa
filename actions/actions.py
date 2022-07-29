@@ -7,6 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
+import time
 from typing import Any, Text, Dict, List
 import pymongo
 from rasa_sdk import Action, Tracker, FormValidationAction
@@ -38,9 +39,11 @@ def getResponse(response_name):
     my_coll = connectDB()
     try:
         res = my_coll.find_one({"response_name": response_name})
-
+        if(res==None):
+            print("Result None for response name: ",response_name)
+            return []
         response = res["response_payload"]
-        
+        # print(my_coll.find({"response_name": response_name}).explain()["executionStats"])
         return response
     except pymongo.errors.OperationFailure as e:
         print("MongoDB Operational Failure: ",e.details)
@@ -100,6 +103,7 @@ class ActionUtterGreet(Action):
         resp_name = "action_utter_greet"
         response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
+
         return []
         
 
@@ -131,6 +135,7 @@ class ValidateContactForm(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
+        name_regex = r'^[.\w]{2,20}$'
         return {"user_name": slot_value}
 
     def validate_user_phone(
@@ -140,12 +145,13 @@ class ValidateContactForm(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        phone_regex = "^(\+\d{1,3}[- ]?)?\d{10}$"
+        phone_regex = r'^(\+\d{1,3}[- ]?)?\d{10}$'
         if(re.search(phone_regex, slot_value) != None):
             # print("Phone number matched")
             return {"user_phone": slot_value}
         else:
             print("Phone number not matched")
+            dispatcher.utter_message(text="Invalid phone number!")
             return {"user_phone": None}
 
     def validate_user_email(
@@ -155,11 +161,11 @@ class ValidateContactForm(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        email_regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+        email_regex = r'^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
         if(re.search(email_regex, slot_value) != None):
             return {"user_email": slot_value}
         print("Email mismatch")
-
+        dispatcher.utter_message(text="Invalid emal id!")
         return {"user_email": None}
 
     def validate_user_query(
@@ -186,6 +192,7 @@ class SubmitContactForm(Action):
         query = tracker.get_slot("user_query")
         print(name, email, phone, query)
         dispatcher.utter_message(response="utter_we_will_contact_you")
+        # logic to send lient details to marketing team 
         return [AllSlotsReset()]
 
 ##############################################
@@ -741,7 +748,6 @@ class ActionutterAIRaas(Action):
         return "action_utter_AI_Raas"
 
     def run(self, dispatcher: CollectingDispatcher,
-
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
@@ -760,7 +766,6 @@ class ActionutterAIRPAbot(Action):
         return "action_utter_AI_RPA_bot"
 
     def run(self, dispatcher: CollectingDispatcher,
-
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
@@ -1295,7 +1300,7 @@ class ActionUtterHowMlUsedInPa(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        print("JI")
         resp_name = "action_utter_How_ML_Used_In_PA"
 
         response=getResponse(resp_name)

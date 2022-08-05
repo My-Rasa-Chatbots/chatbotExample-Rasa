@@ -1,4 +1,5 @@
-.gitignore
 .rasa
 venv
 excel_to_mongo.py
+*.pyc
+ __pycache__

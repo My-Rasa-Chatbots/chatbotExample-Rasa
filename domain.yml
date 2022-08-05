@@ -284,7 +284,7 @@ responses:
   - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Okay then. I hope you manage to find what you're looking for. Bye for now"
+  - text: "Okay then. I hope you manage to find what you're looking for. Bye for now."
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa and Developed by Marlabs."

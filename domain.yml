@@ -267,7 +267,7 @@ actions:
 
 responses:
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  - text: I'm sorry, I didn't quite understand that. could you rephare your query?
     buttons:
     - title: "Contact Us"
       payload: "/Connect_With_Agent"
@@ -275,16 +275,16 @@ responses:
       payload: "/goodbye"
  
   utter_default:
-  - text: Sorry I didn't get that. Can you rephrase?
+  - text: Sorry I didn't get that. could you rephare your query?
 
   utter_did_that_help:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Ok, ask me."
 
   utter_goodbye:
-  - text: "Okay then. I hope you manage to find what you're looking for. Bye for now."
+  - text: "Okay then. I hope you managed to find what you're looking for. Bye for now."
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa and Developed by Marlabs."

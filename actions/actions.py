@@ -16,7 +16,6 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk.events import EventType, AllSlotsReset
 import re
 
-from sqlalchemy import null
 
 # MongoDB connection
 
@@ -51,6 +50,21 @@ def getResponse(response_name):
         return []
 
 #############################
+
+class DigitalSolutions(Action):
+    def name(self) -> Text:
+        return "action_utter_Digital_Solutions"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        resp_name = "action_utter_Digital_Solutions"
+        response=getResponse(resp_name)
+        dispatcher.utter_message(json_message=response)
+        return []
+
+
 class IntelligentAutomationPage(Action):
     def name(self) -> Text:
         return "action_utter_Intelligent_Automation"

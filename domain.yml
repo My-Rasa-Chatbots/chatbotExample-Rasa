@@ -9,7 +9,9 @@ intents:
   - mood_unhappy
   - bot_challenge
   - nlu_fallback
+  - out_of_scope
 
+  - Digital_Solutions
   - Intelligent_Automation
   - RPA_Design_Implementation_Topics
   - Intelligent_Automation_Topics
@@ -169,6 +171,7 @@ actions:
 - validate_contact_form
 - submit_contact_form
 
+- action_utter_Digital_Solutions
 - action_utter_Intelligent_Automation
 - action_utter_RPA_Design_Implementation_Topics
 - action_utter_Intelligent_Automation_Topics
@@ -265,6 +268,11 @@ actions:
 responses:
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    buttons:
+    - title: "Contact Us"
+      payload: "/Connect_With_Agent"
+    - title: "End Chat"
+      payload: "/goodbye"
  
   utter_default:
   - text: Sorry I didn't get that. Can you rephrase?
@@ -276,7 +284,7 @@ responses:
   - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Okay then. I hope you manage to find what you're looking for. Bye for now"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa and Developed by Marlabs."
@@ -298,6 +306,10 @@ responses:
   
   utter_we_will_contact_you:
   - text: "Thank you for providing details, we will contact you shortly."
+
+  utter_ask_anything_else:
+  - text: "Can i help you with anything else?"
+
 
 session_config:
   session_expiration_time: 60

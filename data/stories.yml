@@ -28,6 +28,12 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+#############################
+
+- story: Digital Solutions Page
+  steps:
+  - intent: Digital_Solutions
+  - action: action_utter_Digital_Solutions
 
 - story: Intelligent Automation Page
   steps:

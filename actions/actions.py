@@ -398,16 +398,16 @@ class ActionUtterNlpRpa(Action):
         return []
 
 
-class ActionUtterNlpApllication(Action):
+class ActionUtterNlpApplication(Action):
 
     def name(self) -> Text:
-        return "action_utter_NLP_Apllication"
+        return "action_utter_NLP_Application"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        resp_name = "action_utter_NLP_Apllication"
+        resp_name = "action_utter_NLP_Application"
 
         response=getResponse(resp_name)
 

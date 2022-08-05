@@ -28,6 +28,12 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: thank path
+  steps:
+  - intent: thank_you
+  - action: utter_thankyou
+
+
 #############################
 
 - story: Digital Solutions Page

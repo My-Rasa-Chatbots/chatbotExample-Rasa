@@ -10,6 +10,7 @@ intents:
   - bot_challenge
   - nlu_fallback
   - out_of_scope
+  - thank_you
 
   - Digital_Solutions
   - Intelligent_Automation
@@ -281,7 +282,7 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Ok, ask me."
 
   utter_goodbye:
   - text: "Okay then. I hope you manage to find what you're looking for. Bye for now."
@@ -309,6 +310,9 @@ responses:
 
   utter_ask_anything_else:
   - text: "Can i help you with anything else?"
+
+  utter_thankyou:
+  - text: Welcome.<br>Thank you for visiting our website, Have a great day!!
 
 
 session_config:

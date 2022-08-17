@@ -33,6 +33,10 @@ stories:
   - intent: thank_you
   - action: utter_thankyou
 
+- story: get Contact Us Form
+  steps:
+  - intent: Connect_With_Agent
+  - action: action_utter_Contact_Form
 
 #############################
 

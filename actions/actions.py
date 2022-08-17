@@ -13,29 +13,47 @@ import pymongo
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-from rasa_sdk.events import EventType, AllSlotsReset
+from rasa_sdk.events import EventType, AllSlotsReset,FollowupAction
 import re
 
-
+from . import website_data_scrapper as website_data
 # MongoDB connection
 
 
-def connectDB():
+def connectDB(coll_name):
     conn_str = "mongodb+srv://kesu:keshab123@cluster0.bqo0o.mongodb.net/?retryWrites=true&w=majority"
     try:
         client = pymongo.MongoClient(conn_str)
         db_name = "mChat"
-        col_name = "responses_test"
         my_db = client[db_name]
-        my_coll = my_db[col_name]
+        my_coll = my_db[coll_name]
         # print("DB Connected successfully:")
         return my_coll
     except pymongo.errors.ConnectionFailure as e:
         print("Database connection problem: ", str(e))
 #################################################
+####  query DB and send Form response
+def getForm(response_name):
+    coll_name = "forms"
+    my_coll = connectDB(coll_name)
+    try:
+        res = my_coll.find_one({"response_name": response_name})
+        
+        if(res==None):
+            print("Result None for response name: ",response_name)
+            return []
+        response = res["response_payload"]
+        # print(my_coll.find({"response_name": response_name}).explain()["executionStats"])
+        return response
+    except pymongo.errors.OperationFailure as e:
+        print("MongoDB Operational Failure: ",e.details)
+        return []
+
+
 ####  query DB and send response
 def getResponse(response_name):
-    my_coll = connectDB()
+    coll_name = "responses_test"
+    my_coll = connectDB(coll_name)
     try:
         res = my_coll.find_one({"response_name": response_name})
         
@@ -50,7 +68,35 @@ def getResponse(response_name):
         return []
 
 #############################
+##### Forms
+class ContactForm(Action):
+    def name(self) -> Text:
+        return "action_utter_Contact_Form"
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        resp_name = "action_utter_Contact_Form"
+        response=getForm(resp_name)
+        dispatcher.utter_message(json_message=response)
+        return []
+#######################
+##### Main Menu
+class MainMenu(Action):
+    def name(self) -> Text:
+        return "action_utter_Main_Menu"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        resp_name = "action_utter_Main_Menu"
+        response=getResponse(resp_name)
+        menu_items = website_data.getMenuItems()
+        menu_message = {'type': 'buttons', 'data': menu_items}
+        response.append(menu_message)
+        dispatcher.utter_message(json_message=response)
+        return []
+##########################
 class DigitalSolutions(Action):
     def name(self) -> Text:
         return "action_utter_Digital_Solutions"
@@ -106,7 +152,6 @@ class IntelligentAutomationTopic(Action):
 ################################################
 # general chitchat topics
 
-
 class ActionUtterGreet(Action):
     def name(self) -> Text:
         return "action_utter_greet"
@@ -119,9 +164,8 @@ class ActionUtterGreet(Action):
         response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
 
-        return []
+        return [FollowupAction(name="action_utter_Main_Menu")]
         
-
 
 class ActionUtterCheerUp(Action):
     def name(self) -> Text:
@@ -151,6 +195,7 @@ class ValidateContactForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         name_regex = r'^[.\w]{2,20}$'
+        print(slot_value)
         return {"user_name": slot_value}
 
     def validate_user_phone(
@@ -208,7 +253,7 @@ class SubmitContactForm(Action):
         print(name, email, phone, query)
         dispatcher.utter_message(response="utter_we_will_contact_you")
         # logic to send lient details to marketing team 
-        return [AllSlotsReset()]
+        # return [AllSlotsReset()]
 
 ##############################################
 # Divergence topic

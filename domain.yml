@@ -166,11 +166,14 @@ forms:
       - user_query
 
 actions:
+- action_utter_Main_Menu
 - action_utter_greet
 - action_utter_cheer_up
 
-- validate_contact_form
+- action_utter_Contact_Form
+# - validate_contact_form
 - submit_contact_form
+# - action_validate_slot_mappings
 
 - action_utter_Digital_Solutions
 - action_utter_Intelligent_Automation
@@ -282,7 +285,7 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Ok, ask me."
+  - text: "Please type your query below."
 
   utter_goodbye:
   - text: "Okay then. I hope you managed to find what you're looking for. Bye for now."

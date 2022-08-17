@@ -15,23 +15,29 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-
-- rule: Activate contact form
+#### Contact Us Form
+- rule: get Contact Us Form
   steps:
   - intent: Connect_With_Agent
-  - action: utter_fill_form_all_details
-  - action: contact_form
-  - active_loop: contact_form
+  - action: action_utter_Contact_Form
+  # - active_loop: contact_form
 
-- rule: Submit contact form
-  condition:
-  - active_loop: contact_form
-  steps:
-  - action: contact_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: submit_contact_form
+# - rule: Activate contact form
+#   steps:
+#   - intent: Connect_With_Agent
+#   - action: utter_fill_form_all_details
+#   - action: contact_form
+#   - active_loop: contact_form
+
+# - rule: Submit contact form
+#   condition:
+#   - active_loop: contact_form
+#   steps:
+#   - action: contact_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: submit_contact_form
 
 # - rule: Implementation of the Two-Stage-Fallback
 #   steps:

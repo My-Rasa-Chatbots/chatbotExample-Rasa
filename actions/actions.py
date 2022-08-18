@@ -251,9 +251,10 @@ class SubmitContactForm(Action):
         phone = tracker.get_slot("user_phone")
         query = tracker.get_slot("user_query")
         print(name, email, phone, query)
-        dispatcher.utter_message(response="utter_we_will_contact_you")
+        # dispatcher.utter_message(response="utter_we_will_contact_you")
+        dispatcher.utter_message(response="utter_ask_anything_else")
         # logic to send lient details to marketing team 
-        # return [AllSlotsReset()]
+        return [AllSlotsReset()]
 
 ##############################################
 # Divergence topic

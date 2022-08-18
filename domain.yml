@@ -174,6 +174,7 @@ actions:
 # - validate_contact_form
 - submit_contact_form
 # - action_validate_slot_mappings
+- utter_ask_anything_else
 
 - action_utter_Digital_Solutions
 - action_utter_Intelligent_Automation
@@ -312,7 +313,7 @@ responses:
   - text: "Thank you for providing details, we will contact you shortly."
 
   utter_ask_anything_else:
-  - text: "Can i help you with anything else?"
+  - text: "Can i help you with anything more?"
 
   utter_thankyou:
   - text: Welcome.<br>Thank you for visiting our website, Have a great day!!

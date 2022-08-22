@@ -12,6 +12,10 @@ intents:
   - out_of_scope
   - thank_you
 
+  - address
+  
+  - menu
+
   - Digital_Solutions
   - Intelligent_Automation
   - RPA_Design_Implementation_Topics
@@ -166,14 +170,18 @@ forms:
       - user_query
 
 actions:
-- action_utter_Main_Menu
 - action_utter_greet
 - action_utter_cheer_up
 
+- action_utter_Office_Addresses
+
 - action_utter_Contact_Form
+- action_utter_Main_Menu
+
 # - validate_contact_form
 - submit_contact_form
 # - action_validate_slot_mappings
+
 - utter_ask_anything_else
 
 - action_utter_Digital_Solutions
@@ -276,6 +284,8 @@ responses:
     buttons:
     - title: "Contact Us"
       payload: "/Connect_With_Agent"
+    - title: "Main Menu"
+      payload: "/menu"
     - title: "End Chat"
       payload: "/goodbye"
  

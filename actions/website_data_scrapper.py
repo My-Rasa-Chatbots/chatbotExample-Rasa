@@ -27,19 +27,28 @@ def getAddresses():
     locations= locations_element.find_all('li')
     addresses = address_element.find_all('div', class_='sp-tab__tab-pane')
 
-    address_dict ={}
+    address_list = []
 
-    for (loc_ele,add_ele) in zip(locations, addresses):    
+    for (loc_ele,add_ele) in zip(locations, addresses):
         location = loc_ele.text.strip()
 
         if(location == "India"):
-            address_list = add_ele.find_all('p')
-            address_list[:] = map(lambda x: x.text, address_list)
-            # print(location+':'+address_list[1])
-            address_dict[location] = address_list
+            india_address_list = add_ele.find_all('p')
+            india_address_list[:] = map(lambda x: x.text, india_address_list)
+
+            bangalore_L = list(filter(lambda element: ('Bangalore' in element) or ('Bengaluru' in element), india_address_list))
+            mysore_L = list(filter(lambda element: ('Mysore' in element), india_address_list))
+            kochi_L = list(filter(lambda element: ('Kochi' in element), india_address_list))
+
+            bangalore = {"location":"Bangalore","address":bangalore_L}
+            mysore = {"location":"Mysore", "address": mysore_L}
+            kochi = {"location":"Kochi", "address": kochi_L}
+            
+            address_list.append({"location":location, "address":[bangalore,mysore,kochi]})
         else:
             address = add_ele.find('p').text
             # print(location+':'+address)
-            address_dict[location] = address
-        
-    return address_dict
+            address_list.append({"location":location, "address":address})
+    # print (address_list[3])
+    return address_list
+# getAddresses()

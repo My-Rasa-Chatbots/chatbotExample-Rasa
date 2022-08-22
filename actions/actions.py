@@ -80,6 +80,22 @@ class ContactForm(Action):
         response=getForm(resp_name)
         dispatcher.utter_message(json_message=response)
         return []
+
+#######################
+##### Address Card Carosusel
+class OfficeAddresses(Action):
+    def name(self) -> Text:
+        return "action_utter_Office_Addresses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        addresses = website_data.getAddresses()
+        addresses_message = [{'type':'addressCardsCarousel', 'data':addresses}]
+        dispatcher.utter_message(text="Our offices are in following locations.")
+        dispatcher.utter_message(json_message=addresses_message)
+        return []
+
 #######################
 ##### Main Menu
 class MainMenu(Action):

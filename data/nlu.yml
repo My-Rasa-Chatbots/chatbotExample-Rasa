@@ -99,7 +99,25 @@ nlu:
     - thanks for the providing information
 
 ###############################################
+- intent: address
+  examples: |
+    - address
+    - office addresses
+    - office locations
+    - offices
+    - address of ofices
+    - where it is located
+    - locations 
 
+- intent: menu
+  examples: |
+    - main menu
+    - menu
+    - menu items
+    - navigation
+    - navigation menu
+
+#################################
 - intent: How_Industry_Leading
   examples: |
     - How is Marlabs developing industry leading products and platforms?

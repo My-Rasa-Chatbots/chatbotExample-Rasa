@@ -32,12 +32,21 @@ stories:
   steps:
   - intent: thank_you
   - action: utter_thankyou
-
+##################################
 - story: get Contact Us Form
   steps:
   - intent: Connect_With_Agent
   - action: action_utter_Contact_Form
 
+- story: get main menu
+  steps:
+  - intent: menu
+  - action: action_utter_Main_Menu
+
+- story: get address
+  steps:
+  - intent: address
+  - action: action_utter_Office_Addresses
 #############################
 
 - story: Digital Solutions Page

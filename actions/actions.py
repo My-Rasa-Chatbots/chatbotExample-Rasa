@@ -9,6 +9,7 @@
 
 import time
 from typing import Any, Text, Dict, List
+from unittest import result
 import pymongo
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -67,6 +68,18 @@ def getResponse(response_name):
         print("MongoDB Operational Failure: ",e.details)
         return []
 
+###### get topics from mongo
+def getTopics():
+    coll_name = 'topics'
+    my_coll = connectDB(coll_name)
+    topics = (my_coll.find())
+    topics_list = []
+    for item in topics:
+        topics_list.append(item["topic"])
+    topics_op = [{"type":"inputSuggestions","data":topics_list}]
+    return topics_op
+
+
 #############################
 ##### Forms
 class ContactForm(Action):
@@ -112,6 +125,7 @@ class MainMenu(Action):
         response.append(menu_message)
         dispatcher.utter_message(json_message=response)
         return []
+
 ##########################
 class DigitalSolutions(Action):
     def name(self) -> Text:
@@ -179,9 +193,10 @@ class ActionUtterGreet(Action):
         resp_name = "action_utter_greet"
         response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
-
+        topics = getTopics()
+        print(type(topics))
+        dispatcher.utter_message(json_message=topics)
         return [FollowupAction(name="action_utter_Main_Menu")]
-        
 
 class ActionUtterCheerUp(Action):
     def name(self) -> Text:

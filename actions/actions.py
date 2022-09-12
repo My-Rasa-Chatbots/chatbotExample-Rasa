@@ -194,7 +194,6 @@ class ActionUtterGreet(Action):
         response=getResponse(resp_name)
         dispatcher.utter_message(json_message=response)
         topics = getTopics()
-        print(type(topics))
         dispatcher.utter_message(json_message=topics)
         return [FollowupAction(name="action_utter_Main_Menu")]
 

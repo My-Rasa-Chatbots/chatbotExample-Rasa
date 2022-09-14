@@ -56,8 +56,8 @@ stories:
 
 - story: Intelligent Automation Page
   steps:
-  - intent: Intelligent_Automation
-  - action: action_utter_Intelligent_Automation
+  - intent: Intelligent_Automation_Page
+  - action: action_utter_Intelligent_Automation_Page
 
 - story: RPA Design and Implementation topic
   steps:

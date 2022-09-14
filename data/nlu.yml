@@ -107,7 +107,24 @@ nlu:
     - offices
     - address of ofices
     - where it is located
-    - locations 
+    - locations
+    - Marlabs address
+    - Marlabs office addresses
+    - Marlabs office locations
+    - Marlabs offices
+    - Marlabs address of ofices
+    - Marlabs where it is located
+    - Marlabs locations 
+    - contact details
+    - contact
+
+# - intent: contacts
+#   examples: |
+#     - contacts
+#     - marlabs contacts
+#     - contact details
+#     - marlabs contacts details
+#     - office conatct details
 
 - intent: menu
   examples: |
@@ -116,6 +133,32 @@ nlu:
     - menu items
     - navigation
     - navigation menu
+#################################
+- intent: Intelligent_Automation_Page
+  examples: |
+    - Intelligent Automation Page
+    - Intelligent automation Page
+    - Intelligent automation page
+
+- intent: Intelligent_Automation_Topics
+  examples: |
+    - Intelligent Automation Topics
+    - Intelligent Automation Topic
+    - Intelligent Automation Topics
+
+- intent: RPA_Design_Implementation_Topics
+  examples: |
+    - RPA Design & Implementation Topics
+    - RPA Design & Implementation
+    - RPA Design & Implementation Topics
+    - RPA Design & Implementation
+
+- intent: Digital_Solutions
+  examples: |
+    - Digital Solutions
+    - Digital Solution
+    - Digital Solutions
+    - Digital Solution
 
 #################################
 - intent: How_Industry_Leading
@@ -131,6 +174,7 @@ nlu:
     - How is Marlabs expertise in Industry leading RPA products and platforms?
     - How its expert?
     - Expertise?
+    - Marlabs' Expertise
     - Marlabs expertise in RPA?
     - Expertise in industry leading RPA products?
 
@@ -140,6 +184,7 @@ nlu:
     - Mrlabs recognition?
     - Recognitions?
     - Recognitions marlabs got?
+    - Marlabs' Recognitions
   
 - intent: Marlabs_Best_Products
   examples: |
@@ -147,12 +192,14 @@ nlu:
     - Products from marlabs?
     - Marlabs best products?
     - Industry leading Products?
+    - Marlabs' Best Products
   
 - intent: Marlabs_Solution_Area
   examples: |
     - What are the areas where Marlabs provides solutions?
     - Waht are areas marlabs involved?
     - Marlabs service area?
+    - Marlabs solution area?
     - Service areas?
     - Solution area?
     - Which areas marlabs provides solution?
@@ -189,6 +236,7 @@ nlu:
     - contact me on [9986655491](phone_number)
     - contact me on [mannikeshab@gmail.com](email_id)
     - connect agent
+    - contact us
 
 ################### chetan #######################
 ##################################################
@@ -201,28 +249,32 @@ nlu:
     - Tell me about Computer Vision
     - I want to know about computer Vision
     - Explain about Computer Vision
+    - Computer Vision Definition
 
 - intent: CV_Usage
   examples: |
     - Where is computer vision used?
     - uses of Computer Vision
     - computer vision used in
+    - Computer Vision usage
 
 - intent: CV_Workings
   examples: |
     - How does Computer Vision work?
     - Working of Computer Vision 
     - Work of Computer Vision
-    - Computer Vision works on
+    - Computer Vision workings
 
 - intent: NLP_Stands
   examples: |
     - NLP stands for?
     - Fullform NLP
     - What is NLP Fullform?
+    - NLP full form
 
 - intent: NLP_Definition
   examples: |
+    - NLP Definition
     - What is NLP
     - What is mean by NLP
     - What is NLP
@@ -249,11 +301,13 @@ nlu:
     - What all documents include by Structured and semi-structured?
     - documents in structured NLP
     - documents in semi-structured NLP
+    - NLP structured document
     
 - intent: NLP_Documents_Unstructured
   examples: |
     - What all documents include by Unstructured document?
     - documents in Unstructured document NLP
+    - NLP Unstructured document
 
 - intent: FL_Definition
   examples: |
@@ -262,6 +316,7 @@ nlu:
     - meaning of fuzzy logic
     - deffination of fuzzy logic
     - Explain about Fuzzy Logic
+    - Fuzzy Logic Definition
 
 - intent: FL_AI
   examples: |
@@ -278,6 +333,7 @@ nlu:
     - meaning of Digital Assistant
     - tell me about Digital Assistant
     - Explain about Digital Assistant
+    - Digital Assistant definition
 
 - intent: DA_RPA
   examples: |
@@ -308,12 +364,14 @@ nlu:
     - role of Chatbot in RPA
     - Chatbot in rpa
     - how rpa related to Chatbot
+    - Chatbots for RPA
     
 - intent: Chatbot_Benefits
   examples: |
     - What are the Benefits of Chatbot?
     - Benefits of Chatbot
     - advantage of Chatbot
+    - chatbot benifits
 
 #Process Discovery and Mining
 
@@ -321,7 +379,7 @@ nlu:
   examples: |
     - What is Process Discovery
     - Describe Process Discovery.
-    - Process Discovery deffination
+    - Process Discovery definition
     - about Process Discovery.
     - define Process Discovery
     - Explain about Process Discovery
@@ -331,6 +389,8 @@ nlu:
     - How does Process Discovery Work?
     - Working of Process Discovery
     - work of Process Discovery
+    - Process Discovery workings
+    
 
 - intent: PD_Benefits
   examples: | 
@@ -342,6 +402,7 @@ nlu:
 
 - intent: PM_Definition
   examples: |
+    - Process mining definition
     - What is Process Mining
     - About Process Mining
     - Describe Process Mining

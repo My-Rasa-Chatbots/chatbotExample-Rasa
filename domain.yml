@@ -13,11 +13,12 @@ intents:
   - thank_you
 
   - address
+  # - contacts
   
   - menu
 
   - Digital_Solutions
-  - Intelligent_Automation
+  - Intelligent_Automation_Page
   - RPA_Design_Implementation_Topics
   - Intelligent_Automation_Topics
 
@@ -174,6 +175,7 @@ actions:
 - action_utter_cheer_up
 
 - action_utter_Office_Addresses
+# - action_utter_Office_Contact_Details
 
 - action_utter_Contact_Form
 - action_utter_Main_Menu
@@ -185,7 +187,7 @@ actions:
 - utter_ask_anything_else
 
 - action_utter_Digital_Solutions
-- action_utter_Intelligent_Automation
+- action_utter_Intelligent_Automation_Page
 - action_utter_RPA_Design_Implementation_Topics
 - action_utter_Intelligent_Automation_Topics
 

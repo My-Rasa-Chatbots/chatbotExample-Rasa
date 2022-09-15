@@ -437,21 +437,24 @@ nlu:
     - bot as a service mean's?
     - what is  Robot as a service  
     - What is  Raas  
+    - Baas Definition
+    - about Baas
+    - define Baas
+
 
 - intent: AI_Baas
   examples: |
     - Baas stands for?
     - Baas Full form
     - Baas  
+    - Abbreviation Baas
 
 - intent: AI_Raas
   examples: |
     - Raas Stands for?
     - Raas full form
     - Raas  
-    - Raas Stands for?
-    - Raas full form
-    - Raas 
+    - Abbreviation of Raas
 
 - intent: AI_RPA_bot
   examples: |
@@ -465,6 +468,8 @@ nlu:
     - Define  RPA Bot as a service?
     - RPA Bot as a service mean's?
     - RPAaas Definition?
+    - Define RPA Bot as a Service
+    - Describe RPA Bot as a Service
 
 - intent: AI_RPAaas
   examples: |
@@ -474,16 +479,20 @@ nlu:
     - RPAaas Stands for?
     - RPAaas full form?
     - what is RPAaas 
+    - Abbreviation of RPAaas
 
 - intent: AI_IA
   examples: |
-    - What is a  Intelligent Automation  ?
+    - What is Intelligent Automation  ?
     - How does  intelligent automation work?
     - What is  IA  ?
     - intelligent Automation Definition?
     - Define  Intelligent Automation  ?
     - Intelligent Automation  ?
     - Intelligent Automation Meaning?
+    - Describe Intelligent Automation
+    - Explain Intelligent Automation
+    - Intelligent Automation Mean's
 
 - intent: AI_IA_Full
   examples: |
@@ -496,6 +505,7 @@ nlu:
     - IA stands for?
     - IA full form?
     - IA?
+    - Abbreviation of IA
 
 - intent: AI_AI
   examples: |
@@ -507,15 +517,21 @@ nlu:
     - AI stands for?
     - AI full form?
     - AI  ?
+    - Abbreviation of AI
 
 - intent: AI_AboutAI
   examples: |
-    - Explain about Artificial Intelligence AI
+    - Explain about Artificial Intelligence
     - What is Artificial Intelligence  
     - Artificial Intelligence definiation
     - Define AI  
     - Define Artificial intelligence  
-    - Artificial intelligence  
+    - Artificial intelligence 
+    - Explain AI
+    - Describe AI
+    - Describe about Artificial Intelligence
+    - What is Artificial Intelligence meaning
+
 
 - intent: AI_AI_Automation
   examples: |
@@ -524,6 +540,10 @@ nlu:
     - AI Automation service  
     - AI Automation as a service Definition?
     - Explain  AI automation as a service  ?
+    - Describe AI Automation as a service 
+    - Define AI Automation as a service 
+    - About AI Automation as a service 
+  
 
 - intent: AI_AIaas
   examples: |
@@ -534,21 +554,28 @@ nlu:
     - What is  AIaas Full form?
     - AIaas full form
     - AIaas stands for?
-    - AIaas
+    - AIaas abbreviation
 
 - intent: AI_Advantages
   examples: |
     - What is  Advantages of AI  ?
+    - What is  Advantages of Artificial Intelligence  ?
     - Advantages of AI  ?
-    - Advantages  
+    - AI Advantages  
+    - Artificial Intelligence Advantages
     - Explain About  AI Advantages  ?
+    - Describe the advantages of AI
 
 - intent: AI_DisAdvantages
   examples: |
     - What is  DisAdvantages of AI  ?
+    - What is  DisAdvantages of Artificial Intelligence
     - Disadvantages of AI  ?
-    - DisAdvantages  
+    - Disadvantages of Artificial Intelligence ?
+    - Artificial Intelligence DisAdvantages  
+    - AI DisAdvantages 
     - Explain About  AI DisAdvantages  ?
+    - Explain About  Artificial Intelligence DisAdvantages
 
 - intent: AI_Technology
   examples: |
@@ -561,36 +588,55 @@ nlu:
 - intent: AI_Details
   examples: |
     - Some more  details about AI  ?
+    - Some more  details about Artificial Intelligence 
     - More  details of AI  
-    - Explain Some more  Details about AI  ?
+    - More  details of Artificial Intelligence
+    - Explain Some more  Details about AI 
+    - Explain Some more  Details about Artificial Intelligence ?
     - I need some more  details about AI  ?
+    - I need some more  details about Artificial Intelligence
     - Tell some more  details in AI  ?
+    - Tell some more  details in Artificial Intelligence 
 
 - intent: AI_Intent
   examples: |
     - What is the  intent of AI  ?
+    - What is the  intent of Artificial Intelligence 
     - Intent of AI  ?
+    - Intent of Artificial Intelligence 
     - Explain about  intent of AI  ?
+    - Explain about  intent of Artificial Intelligence 
     - Intented of AI  ?
+    - Intented of Artificial Intelligence 
 
 - intent: AI_Benefits
   examples: |
-    - What is the  benefits of AI  ?
+    - What are the  benefits of AI  ?
+    - What are the  benefits of Artificial Intelligence 
     - Benefits of AI  ?
-    - Benefits  of AI?
+    - Benefits of Artificial Intelligence  
     - Explain  benefits of AI  ?
+    - Explain  benefits of Artificial Intelligence
     - what are the  benefits of AI  ?
+    - what are the  benefits of Artificial Intelligence
     - Share the  benefits of AI  ?
+    - Share the  benefits of Artificial Intelligence 
 
 #API QnA
 
 - intent: API
   examples: |
     - What is  API  
-    - What is  Application programming interfaces  
+    - What is  Application Programming Interfaces 
     - Explain about  API  
+    - Explain about  Application Programming Interfaces 
     - Define  API  
+    - Define Application Programming Interfaces
     - Application programming interface mean's
+    - Describe API
+    - Describe Application Programming Interfaces
+    - API meaning
+
 
 - intent: API_Full
   examples: |
@@ -602,29 +648,34 @@ nlu:
     - API full form?
     - API  
     - API stands for?
+    - Abbreviation of API
 
 - intent: API_Enable
   examples: |
     - What is  API enabling System  ?
     - API Enabling System  ?
     - Explain about  API Enabling System  ?
-    - Api Enabling System Defination?
+    - API Enabling System Defination?
     - API enabling system Mean's?
+    - Describe API Enabling System
+    - Define API Enabling System
+    - Details about API Enabling System
 
 - intent: API_Driven
   examples: |
     - What is  API Driven Process  ?
     - API Driven Process  ?
+    - Describe API Driven Process
     - Define  API Driven Process  ?
     - Explain  API Driven Process  ?
     - API driven process means?
 
 - intent: API_Working
   examples: |
-    - How API is  Working  ?
-    - API will  Working  ?
-    - What is using to  work api  ?
-    - How API will  working  ?
+    - How API is Working  ?
+    - API will Working  ?
+    - What is using to work api  ?
+    - How API will working  ?
     - API Work  ?
 
 - intent: API_EndPoint
@@ -634,7 +685,9 @@ nlu:
     - API End Point  
     - API EndPoint  ?
     - API end point means?
-    - explain  API end point  ?
+    - Explain  API end point  ?
+    - Describe API End Point
+
 
 - intent: API_EP_Importance
   examples: |
@@ -644,15 +697,20 @@ nlu:
     - Explain about API  end point importance  ?
     - what is  importance point of API end Point?
     - what is the  importance of API end point?
+    - Describe API End point importance 
 
 - intent: API_Benefits
   examples: |
-    - what is the  benefits of API  ?
+    - what are the  benefits of API  ?
     - Benefits of API  ?
     - Explain about  Benefits of API  ?
     - Define  Benefits of API  ?
     - API Benefits  ?
     - What are the  Benefits of API  ? 
+    - What are the advantages of API
+    - API advantages
+    - Define  advantages of API 
+    - API advantages
 
 - intent: API_Main_reasons
   examples: |
@@ -665,18 +723,19 @@ nlu:
 
 - intent: API_Security
   examples: |
-    - what is the  security of API endpoint?
+    - what is the security of API endpoint?
     - explain about that api endpoint  security  ?
     - Security definition?
-    - security  ?
+    - security of API end point?
     - define  security of API endpoint?
+    - Describe security of API end point
 
 - intent: API_Performance
   examples: |
     - what is the  Performance of API endpoint?
     - explain about that api endpoint  Performance  ?
     - Performance  definition?
-    - Performance  ?
+    - Performance  API End point?
     - define  Performance of API endpoint?
 
 ########

@@ -293,7 +293,7 @@ nlu:
   examples: |
     - What are two Categories NLP applications in RPA?
     - 2 categories of NLP in rpa
-    - NLP application in rpa
+    - NLP applications in rpa
     - Application of NLP in RPA
 
 - intent: NLP_Documents_Structure

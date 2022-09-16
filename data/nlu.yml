@@ -288,6 +288,10 @@ nlu:
     - NLP in RPA
     - How NLP works in RPA?
     - natural language processing in rpa
+    - What is Natural Language Processing NLP in RPA?
+    - NLP in RPA
+    - How NLP works in RPA?
+    - natural language processing in rpa
 
 - intent: NLP_Application
   examples: |
@@ -738,16 +742,6 @@ nlu:
     - Performance  API End point?
     - define  Performance of API endpoint?
 
-########
-
-- intent: Disadvantages
-  examples: |
-    - what are the Disadvantages?
-    - What is the disadvantages?
-    - disadvantages?
-    - Tell about this disadvantages?
-    - What about disadvantages?
-    - Explain the disadvantages?
 
 ############## Nagendra ############
 ####################################
@@ -762,40 +756,53 @@ nlu:
     - explain about process analytics
     - process analytics  desription
     - what is the meant by process analytics
-    - process analyticsdefinition
-    - process analysis means
-    - process analysis meaning
-    - process analysis
-    - about process analysis 
+    - process analytics definition
+    - process analytics means
+    - process analytics meaning
+    - process analytics
+    - about process analytics 
+    - Describe process analytics
     
 
   
 - intent: PA_Benefits
   examples: |
-    - Benefits of process ananlysis
-    - Goals of process analysis
-    - What are the benefits of process analysis
-    - Objective of process analysis
+    - Benefits of process analytics
+    - Goals of process analytics
+    - What are the benefits of process analytics
+    - Objective of process analytics
     - use of process analytics
-    - advantages of process analysis
-    - process analysis benefits
+    - advantages of process analytics
+    - process analytics benefits
     - process analytics advantages
-    - process analysis goals 
+    - process analytics goals 
+    - usage of process analytics
     
 - intent: ML_Purpose_In_PA
   examples: |
     - Why Machine Learning algorithms are used for process analytics?
-    - Machine learning algorithms purpose in process analysis
-    - Machine learning purpose in process analysis
+    - Machine learning algorithms purpose in process analytics
+    - Machine learning purpose in process analytics
+    - What is the purpose of machine learning
+    - Machine learning Definition
+    - ML purpose in process analytics
+    - ML purpose in PA
+    - What is machine learning algorthim
+
 
 - intent: How_ML_Used_In_PA
   examples: |
     - How is ML used in analytics?
-    - How Machine Learning used in process analysis
+    - How Machine Learning used in process analytics
     - How is Machine Learning used in analytics?
-    - How Machine Learning used in process analysis
+    - How Machine Learning used in process analytics
     - How is Machine Learning used in analytics?
-    - How Machine Learning used in process analysis
+    - How Machine Learning used in process analytics
+    - What is usage of Machine learning
+    - machine learning used in process analytics
+    - ML usage
+    - ML's usage in PA
+
 
 #ML
 
@@ -823,6 +830,8 @@ nlu:
     - how many categories of process analytics
     - number of process analytics
     - How many types of Process Analytics and what are they?
+    - types of PA
+
 
 - intent: Descriptive_PA_Definition
   examples: |
@@ -835,6 +844,9 @@ nlu:
     - explain about descriptive process analytics
     - descriptive process analytics desription
     - define descriptive process analytics
+    - descriptive PA means
+    - descriptive PA definition
+    - definition of descriptive process analytics
 
 - intent: Predictive_PA_Definition 
   examples: |
@@ -847,6 +859,9 @@ nlu:
     - explain about Predictive  process analytics
     - Predictive  process analytics desription
     - define Predictive  process analytics
+    - Predictive PA means
+    - Predictive PA definitio
+    - definition of predictive process analytics
 
 - intent: Prescriptive_PA_Definition 
   examples: |
@@ -859,37 +874,50 @@ nlu:
     - explain about Prescriptive  process analytics
     - Prescriptive  process analytics desription
     - define Prescriptive  process analytics
+    - prescriptive PA means
+    - prescriptive PA definition
+    - definition of prescriptive process analytics
 
 - intent: PA_Used_Areas
   examples: |
     - Where process analytics are used
     - where process analytics are implementing
-    - process analytics used areas
+    - process analytics usage areas
     - process analytics utilising industries
     - which industries are using process analytics
+    - where we can using process analytics
+    - which area are using process analytics
+    - PA used areas
+    - process analytics used areas
+
 
 
 #Process Re-Engineering
 
 - intent: PRE_Definition
   examples: | 
-    - what is the meaning of process re engineering?
-    - what is meant by process re engineering
-    - process re engineering
-    - explain about process re-engineering
-    - what is process re engineering
+    - what is the meaning of process reengineering?
+    - what is meant by process reengineering
+    - process reengineering
+    - explain about process reengineering
+    - what is process reengineering
     - process reengineering definiton
-    - about process re engineering
-    - define process re engineering
-    - process re engineering description
-    - process re engineering means
+    - about process reengineering
+    - define process reengineering
+    - process reengineering description
+    - process reengineering means
+    - PRE definition
+    - definition of Process reengineering 
+    - describe of process reengineering
+    
+
 
 - intent: RPA_Definition
   examples: |
     - What is unique about RPA?
     - What is Rpa
     - what is the meaning of rpa
-    - RPA
+    - RPA definition
     - Robotic Process Automation
     - what is Robotic Process Automation
     - what is the meaning of Robotic Process Automation
@@ -900,63 +928,89 @@ nlu:
     - Robotic Process Automation description
     - about rpa
     - about Robotic Process Automation
+    - definition of RPA
+    - describe RPA
+    
 
 - intent: PRE_Stages
   examples: |
     - What are the phases of Business Process Reengineering?
-    - What are the stages of process re engineering
-    - stages of business process re engineering
-    - explain stages of process re engineering
-    - derive the stages of process re engineering
-    - steps in process re engineering
+    - What are the stages of process reengineering
+    - stages of business process reengineering
+    - explain stages of process reengineering
+    - derive the stages of process reengineering
+    - steps in process reengineering
     - levels in process reengineering
-    - process re engineering stages
-    - process re engineering phases
-    - process re engineering levels
-    - process re engineering points
-    - process re engineering divisions
-    - explain process re engineering levels
+    - process reengineering stages
+    - process reengineering phases
+    - process reengineering levels
+    - process reengineering points
+    - process reengineering divisions
+    - explain process reengineering levels
     
 - intent: PRE_Benefits
   examples: |
     - What are the objectives of BPR?
-    - Process re engineering benefits
-    - Advantages of Process re engineering
-    - objectives of process re engineering
-    - what are the gains of using Process re engineering
+    - Process reengineering benefits
+    - Advantages of Process reengineering
+    - objectives of process reengineering
+    - what are the gains of using Process reengineering
     - PRE advantages
     - PRE benefits
-    - Process re engineering advantages
+    - Process reengineering advantages
+    - benefits of process reengineering
+    - benefits of PRE
   
 - intent: PRE_Disadvantages
   examples: |
-    - What are the disadvantages of BPR?
-    - Process re engineering disadvantages
+    - What are the disadvantages of PRE?
+    - Process re-engineering disadvantages
     - Process re engineering losses
     - drawbacks of process reengineering
     - flaws of process reengineering
     - process re engineering drawbacks
     - process re engineering flaws
+    - disadvantages of PRE
+    - PRE Disadvantages
+    - explain disadvantes of process reengineering
+
 
 - intent: PRE_Challenges
   examples: |
-    - What are the challenges faced by BPR?
+    - What are the challenges faced by PRE?
     - What are the challenges faces by process reenigneering
     - process reengineering challenges
     - process reengineering issues
     - What are the issues faced by process reengineering
+    - challenges of PRE
+    - PRE challenges
+
 
 - intent: RPA_Using_Areas
   examples: |
     - Which sectors benefiting through RPA?
     - Which sectors RPA using
     - RPA using areas
+    - where can use RPA
+    - usage area of RPA
+    - Which area are using RPA
+    - RPA usage areas
 
-- intent: Definition
-  examples: |
-    - Explain about
-    - Give description 
-    - what is the meaning
-    - what is meant for
+# - intent: Definition
+#   examples: |
+#     - Explain about
+#     - Give description 
+#     - what is the meaning
+#     - what is meant for
 
 
+########
+
+# - intent: Disadvantages
+#   examples: |
+#     - what are the Disadvantages?
+#     - What is the disadvantages?
+#     - disadvantages?
+#     - Tell about this disadvantages?
+#     - What about disadvantages?
+#     - Explain the disadvantages?

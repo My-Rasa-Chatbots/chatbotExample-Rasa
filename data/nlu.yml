@@ -271,6 +271,7 @@ nlu:
     - Fullform NLP
     - What is NLP Fullform?
     - NLP full form
+    - NLP abbreviation 
 
 - intent: NLP_Definition
   examples: |
@@ -280,6 +281,8 @@ nlu:
     - What is NLP
     - tell me about NLP
     - Explain about NLP
+    - Describe NLP
+    - Description about NLP
 
 
 - intent: NLP_RPA
@@ -321,6 +324,14 @@ nlu:
     - deffination of fuzzy logic
     - Explain about Fuzzy Logic
     - Fuzzy Logic Definition
+    - FL definition
+    - What is FL
+    - What you mean by FL
+    - FL means
+    - Describe FL
+    - Description about FL
+
+
 
 - intent: FL_AI
   examples: |
@@ -338,6 +349,9 @@ nlu:
     - tell me about Digital Assistant
     - Explain about Digital Assistant
     - Digital Assistant definition
+    - Brief about DA 
+    - Brief about Digital Assistant
+    - DA
 
 - intent: DA_RPA
   examples: |
@@ -345,12 +359,14 @@ nlu:
     - Digital Assistant in rpa
     - role of Digital Assistant
     - how rpa related to the Digital Assistant
+    - Role of DA
 
 - intent: DA_Examples
   examples: |
     - What are the examples of Digital Assistant?
     - examples of Digital Assistant
     - Digital Assistant examples
+    - DA examples
 
 - intent: Chatbot_Definition
   examples: |
@@ -361,6 +377,8 @@ nlu:
     - define Chatbot
     - Chatbot definition
     - Explain about Chatbot
+    - chatbot
+    - chatbots
   
 - intent: Chatbot_RPA
   examples: |
@@ -375,7 +393,10 @@ nlu:
     - What are the Benefits of Chatbot?
     - Benefits of Chatbot
     - advantage of Chatbot
-    - chatbot benifits
+    - chatbot benefits
+    - chatbot uses
+    - chatbot profits
+    - chatbots assitance
 
 #Process Discovery and Mining
 
@@ -387,6 +408,7 @@ nlu:
     - about Process Discovery.
     - define Process Discovery
     - Explain about Process Discovery
+    - Process Discovery
 
 - intent: PD_Working
   examples: |
@@ -394,6 +416,12 @@ nlu:
     - Working of Process Discovery
     - work of Process Discovery
     - Process Discovery workings
+    - Process Discovery operations
+    - Process Discovery services
+    - PD workings
+    - PD operations
+    - PD services
+    - How does PD Work?
     
 
 - intent: PD_Benefits
@@ -402,6 +430,8 @@ nlu:
     - Benefits of Process Discovery
     - Process Discovery Benefits.
     - advantage of Process Discovery
+    - PD advantages
+    - PD benefits
     
 
 - intent: PM_Definition
@@ -421,6 +451,8 @@ nlu:
     - Usage of Process Mining
     - use of Process Mining
     - Process Mining Usage
+    - PM usages
+    
 
 - intent: PM_Benefits
   examples: |

@@ -284,7 +284,7 @@ actions:
 #######################################################
 responses:
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. could you rephare your query?
+  - text: I'm sorry, I didn't quite understand that. could you rephrase your query?
     buttons:
     - title: "Contact Us"
       payload: "/Connect_With_Agent"

@@ -31,7 +31,7 @@ intents:
 
   - Connect_With_Agent
 
-# chetan
+### chetan
   - CV_Definition
   - CV_Usage
   - CV_Workings
@@ -63,7 +63,7 @@ intents:
   - PM_Usage
   - PM_Benefits
 
-# Kannan
+### Kannan
   - AI_bot_service
   - AI_Baas
   - AI_Raas
@@ -94,8 +94,8 @@ intents:
   - API_Security
   - API_Performance
 
-# Nagndra
-#Process Analysis
+### Nagndra
+### Process Analysis
   - PA_Definition
   - PA_Benefits
   - ML_Purpose_In_PA
@@ -108,7 +108,7 @@ intents:
   - Prescriptive_PA_Definition
   - PA_Used_Areas
 
-  #Process Re Engineering
+### Process Re Engineering
   - PRE_Definition
   - RPA_Definition
   - PRE_Stages
@@ -197,7 +197,7 @@ actions:
 - action_utter_Marlabs_Best_Products
 - action_utter_Marlabs_Solution_Area
 
-# chetan ############################
+### chetan ############################
 - action_utter_CV_Definition
 - action_utter_CV_Usage
 - action_utter_CV_Workings
@@ -224,7 +224,7 @@ actions:
 - action_utter_PM_Benefits
 
 ################# Kannan ############
-#AI 
+### AI 
 - action_utter_AI_bot_service
 - action_utter_AI_Baas
 - action_utter_AI_Raas
@@ -243,7 +243,7 @@ actions:
 - action_utter_AI_Intent
 - action_utter_AI_Benefits
 
-#API
+### API
 - action_utter_API
 - action_utter_API_Full
 - action_utter_API_Enable
@@ -257,7 +257,7 @@ actions:
 - action_utter_API_Performance
 
 ####### Nagendra #################
-# Process Analysis
+### Process Analysis
 
 - action_utter_PA_Definition
 - action_utter_PA_Benefits
@@ -270,7 +270,7 @@ actions:
 - action_utter_Prescriptive_PA_Definition
 - action_utter_PA_Used_Areas
 
-# Process Re Engineering
+### Process Re Engineering
 
 - action_utter_PRE_Definition
 - action_utter_PRE_Stages
@@ -280,6 +280,8 @@ actions:
 - action_utter_RPA_Definition
 - action_utter_RPA_Using_Areas
 
+#######################################################
+#######################################################
 responses:
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. could you rephare your query?

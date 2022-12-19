@@ -33,23 +33,27 @@ def getAddresses():
         location = loc_ele.text.strip()
 
         if(location == "India"):
-            india_address_list = add_ele.find_all('p')
-            india_address_list[:] = map(lambda x: x.text, india_address_list)
-
-            bangalore_L = list(filter(lambda element: ('Bangalore' in element) or ('Bengaluru' in element), india_address_list))
-            mysore_L = list(filter(lambda element: ('Mysore' in element), india_address_list))
-            kochi_L = list(filter(lambda element: ('Kochi' in element), india_address_list))
-
-            bangalore = {"location":"Bangalore","address":bangalore_L}
-            mysore = {"location":"Mysore", "address": mysore_L}
-            kochi = {"location":"Kochi", "address": kochi_L}
+            raw_india_address_list = add_ele.find_all('p')
+            all_india_address_list = []
+            city = ''
+            addresses = []
+            for element in raw_india_address_list:
+              if(element.strong != None):
+                if(len(addresses)>0):
+                  all_india_address_list.append({'location': city, 'address': addresses})
+                  addresses = []
+                city = element.strong.text.strip()
+                # print(city)
+              addresses.append(element.text)
+            all_india_address_list.append({'location': city, 'address': addresses})
             
-            address_list.append({"location":location, "address":[bangalore,mysore,kochi]})
+            address_list.append({"location":location, "address":all_india_address_list})
+            # print(all_india_address_list[0])
         else:
             address = add_ele.find('p').text
             # print(location+':'+address)
             address_list.append({"location":location, "address":address})
-    # print (address_list[3])
+    # print (address_list[2])
     return address_list
 # getAddresses()
 

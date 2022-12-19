@@ -294,7 +294,7 @@ responses:
       payload: "/goodbye"
  
   utter_default:
-  - text: Sorry I didn't get that. could you rephare your query?
+  - text: Sorry I didn't get that. could you rephrase your query?
 
   utter_did_that_help:
   - text: "Did that help you?"
